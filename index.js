@@ -10,7 +10,7 @@ app.get("/user/:user", async (req, res) => {
     const result = await fetch(`https://api.github.com/users/${user}/repos`);
     const data = await result.json();
 
-    if (data.status !== "200") {
+    if (!Array.isArray(data) || data.status) {
       res.json(data);
 
 			return;
