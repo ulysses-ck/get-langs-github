@@ -52,7 +52,6 @@ app.get("/user/:user", async (req, res) => {
       );
     res.json({ message: resultStr });
   } catch (error) {
-    console.log(error);
     res.json(error);
   }
 });
