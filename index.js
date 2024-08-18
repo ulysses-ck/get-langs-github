@@ -50,7 +50,7 @@ app.get("/user/:user", async (req, res) => {
           `${languagesPercentage[e]}% (${languages[e]}) of repos were made with ${e}.`
         )
       );
-    res.json({ message: resultStr });
+    res.json({ message: resultStr.join("\n") });
   } catch (error) {
     res.json(error);
   }
